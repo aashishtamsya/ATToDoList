@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ATTask.h"
 
 @interface ViewController : UIViewController
-
+{
+    NSMutableArray *tasks;
+}
 
 @end
 
