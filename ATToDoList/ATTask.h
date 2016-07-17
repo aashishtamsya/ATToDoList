@@ -11,11 +11,15 @@
 @interface ATTask : NSObject
 {
     NSString *text;
-    BOOL isCompleted;
+    NSString *isCompleted;
 }
 
 @property(nonatomic,copy) NSString *text;
-@property(nonatomic) BOOL isCompleted;
+@property(nonatomic,copy) NSString *isCompleted;
 
-+(ATTask*)taskWithText:(NSString *)text completed:(BOOL)isCompleted;
++(ATTask*)taskWithText:(NSString *)text completed:(NSString *)isCompleted;
+
++(void)saveAllTasksInUserDefaults:(NSMutableArray *)allTasks;
+
++(NSMutableArray *)loadAllTasksFromUserDefaults;
 @end

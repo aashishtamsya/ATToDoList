@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E123CBCE1D3B41B800D449D4 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E123CBCD1D3B41B800D449D4 /* AddTaskViewController.m */; };
 		E1FDDE0F1D3A803D00115313 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FDDE0E1D3A803D00115313 /* main.m */; };
 		E1FDDE121D3A803D00115313 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FDDE111D3A803D00115313 /* AppDelegate.m */; };
 		E1FDDE151D3A803E00115313 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FDDE141D3A803E00115313 /* ViewController.m */; };
@@ -16,7 +17,6 @@
 		E1FDDE281D3A803E00115313 /* ATToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FDDE271D3A803E00115313 /* ATToDoListTests.m */; };
 		E1FDDE331D3A803E00115313 /* ATToDoListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FDDE321D3A803E00115313 /* ATToDoListUITests.m */; };
 		E1FDDE421D3A816300115313 /* ATTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FDDE411D3A816300115313 /* ATTask.m */; };
-		E1FDDE451D3A836E00115313 /* AddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1FDDE441D3A836E00115313 /* AddTaskViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E123CBCC1D3B41B800D449D4 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
+		E123CBCD1D3B41B800D449D4 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 		E1FDDE0A1D3A803D00115313 /* ATToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1FDDE0E1D3A803D00115313 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1FDDE101D3A803D00115313 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,8 +57,6 @@
 		E1FDDE341D3A803E00115313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1FDDE401D3A816300115313 /* ATTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATTask.h; sourceTree = "<group>"; };
 		E1FDDE411D3A816300115313 /* ATTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATTask.m; sourceTree = "<group>"; };
-		E1FDDE431D3A836E00115313 /* AddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTaskViewController.h; sourceTree = "<group>"; };
-		E1FDDE441D3A836E00115313 /* AddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTaskViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +113,9 @@
 				E1FDDE411D3A816300115313 /* ATTask.m */,
 				E1FDDE131D3A803D00115313 /* ViewController.h */,
 				E1FDDE141D3A803E00115313 /* ViewController.m */,
+				E123CBCC1D3B41B800D449D4 /* AddTaskViewController.h */,
+				E123CBCD1D3B41B800D449D4 /* AddTaskViewController.m */,
 				E1FDDE161D3A803E00115313 /* Main.storyboard */,
-				E1FDDE431D3A836E00115313 /* AddTaskViewController.h */,
-				E1FDDE441D3A836E00115313 /* AddTaskViewController.m */,
 				E1FDDE191D3A803E00115313 /* Assets.xcassets */,
 				E1FDDE1B1D3A803E00115313 /* LaunchScreen.storyboard */,
 				E1FDDE1E1D3A803E00115313 /* Info.plist */,
@@ -280,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1FDDE451D3A836E00115313 /* AddTaskViewController.m in Sources */,
+				E123CBCE1D3B41B800D449D4 /* AddTaskViewController.m in Sources */,
 				E1FDDE151D3A803E00115313 /* ViewController.m in Sources */,
 				E1FDDE121D3A803D00115313 /* AppDelegate.m in Sources */,
 				E1FDDE0F1D3A803D00115313 /* main.m in Sources */,
@@ -510,6 +510,7 @@
 				E1FDDE391D3A803E00115313 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1FDDE3A1D3A803E00115313 /* Build configuration list for PBXNativeTarget "ATToDoListTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +519,7 @@
 				E1FDDE3C1D3A803E00115313 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1FDDE3D1D3A803E00115313 /* Build configuration list for PBXNativeTarget "ATToDoListUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +528,7 @@
 				E1FDDE3F1D3A803E00115313 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

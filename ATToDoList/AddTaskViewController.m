@@ -2,7 +2,7 @@
 //  AddTaskViewController.m
 //  ATToDoList
 //
-//  Created by Felix ITs 01 on 16/07/16.
+//  Created by Felix ITs 01 on 17/07/16.
 //  Copyright © 2016 Aashish Tamsya. All rights reserved.
 //
 
@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    tasks = [[NSMutableArray alloc]init];
+    tasks = [ATTask loadAllTasksFromUserDefaults];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +38,37 @@
 }
 */
 
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return true;
+}
+
+- (IBAction)addButtonTapped:(id)sender {
+    
+    taskText = self.textFieldTask.text;
+    
+    if (taskText.length > 0 && ![taskText isEqualToString:@""]) {
+        
+        ATTask *taskModel = [ATTask taskWithText:taskText completed:@"NO"];
+
+        if (tasks.count > 0) {
+            
+            [tasks addObject:taskModel];
+        }
+        else {
+            tasks = [[NSMutableArray alloc]initWithObjects:taskModel, nil];
+        }
+        
+        [ATTask saveAllTasksInUserDefaults:tasks];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (IBAction)cancelButtonTapped:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

@@ -19,8 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uYb-wz-HIi">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskcell" id="uS9-UT-yQs">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uS9-UT-yQs" id="R79-e2-aFO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="t0D-Hl-zvg"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2Us-tV-biV"/>
@@ -30,14 +40,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uYb-wz-HIi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="2hM-Lz-222"/>
-                            <constraint firstItem="uYb-wz-HIi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9Fo-ib-c5X"/>
+                            <constraint firstItem="uYb-wz-HIi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="9Fo-ib-c5X"/>
                             <constraint firstItem="uYb-wz-HIi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sln-dk-tQY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uYb-wz-HIi" secondAttribute="bottom" id="W2p-XN-uuV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="F9p-Yl-yKR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rc7-ce-cYw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rc7-ce-cYw">
+                            <connections>
+                                <action selector="addBarButtonTapped:" destination="BYZ-38-t0r" id="azg-7y-v8o"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableViewTask" destination="uYb-wz-HIi" id="gYt-jl-dBo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,7 +72,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLs-Bs-3hy">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Task" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLs-Bs-3hy">
                                 <rect key="frame" x="30" y="89" width="541" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="r9T-X8-h2S"/>
@@ -69,10 +86,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTj-Hy-cYW">
                                 <rect key="frame" x="30" y="135" width="270" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="Qu5-oC-j0c" eventType="touchUpInside" id="8yr-rG-liS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZ8-Ze-LLj">
                                 <rect key="frame" x="310" y="135" width="270" height="30"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="Qu5-oC-j0c" eventType="touchUpInside" id="leX-mR-zlI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,6 +113,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XQs-67-DQv"/>
+                    <connections>
+                        <outlet property="textFieldTask" destination="MLs-Bs-3hy" id="7EY-Od-EKL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z9-jQ-bmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
